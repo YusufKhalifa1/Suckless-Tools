@@ -94,7 +94,7 @@ char *termname = "st";
 unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
-/*static const char *colorname[] = {
+static const char *colorname[] = {
 	"black",
 	"red3",
 	"green3",
@@ -126,8 +126,8 @@ unsigned int defaultfg = 258;
 unsigned int defaultbg = 259;
 unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
-*/
-#include "/home/yusuf/.cache/wal/colors-wal-st.h"
+
+//#include "/home/yusuf/.cache/wal/colors-wal-st.h"
 
 /*
  * Default shape of cursor
