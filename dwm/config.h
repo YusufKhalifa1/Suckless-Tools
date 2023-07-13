@@ -104,6 +104,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
+	{ MODKEY|ControlMask|ShiftMask, XK_r,	   spawn, 	   SHCMD("reboot")},
+	{ MODKEY|ControlMask|ShiftMask, XK_s,	   spawn,	   SHCMD("shutdown")},
 };
 
 /* button definitions */
