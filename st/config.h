@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrains Mono:pixelsize=16:antialias=true:autohint=true";
-static int borderpx = 2;
+static char *font = "JetBrains Mono:pixelsize=14:antialias=true:autohint=true";
+static int borderpx = 1;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -93,11 +93,9 @@ char *termname = "st";
  */
 unsigned int tabspaces = 8;
 
-/* bg opacity */
-float alpha = 0.8;
-
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
+	/* 8 normal colors */
 	"black",
 	"red3",
 	"green3",
@@ -107,6 +105,7 @@ static const char *colorname[] = {
 	"cyan3",
 	"gray90",
 
+	/* 8 bright colors */
 	"gray50",
 	"red",
 	"green",
@@ -118,19 +117,23 @@ static const char *colorname[] = {
 
 	[255] = 0,
 
+	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
-	"gray90", 
-	"black", 
+	"gray90", /* default foreground colour */
+	"black", /* default background colour */
 };
 
 
+/*
+ * Default colors (colorname index)
+ * foreground, background, cursor, reverse cursor
+ */
 unsigned int defaultfg = 258;
 unsigned int defaultbg = 259;
 unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
-//#include "/home/yusuf/.cache/wal/colors-wal-st.h"
 /*
  * Default shape of cursor
  * 2: Block ("█")
@@ -173,8 +176,6 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
-	{ XK_ANY_MOD,           Button4, kscrollup,      {.i = 8},		0, /* !alt */ -1 },
-	{ XK_ANY_MOD,           Button5, kscrolldown,    {.i = 8},		0, /* !alt */ -1 },
 	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
 	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
