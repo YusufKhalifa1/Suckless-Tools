@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "MesloLGS Nerd Font:pixelsize=16:antialias=true:autohint=true";
+static char *font = "MesloLGS Nerd Font:pixelsize=14:antialias=true:autohint=true";
 static int borderpx = 1;
 
 /*
@@ -92,9 +92,6 @@ char *termname = "st";
  *	stty tabs
  */
 unsigned int tabspaces = 8;
-
-/* bg opacity */
-float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
